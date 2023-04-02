@@ -7,6 +7,7 @@ exports['qb-target']:AddBoxZone('SetMBA', vec3(-281.21, -1935.45, 30.2), 0.3, 0.
 RegisterNetEvent("xmmx-mbaEntity:OpenMenu", function()
     exports['qb-menu']:openMenu({
         { header = "Change Maze Bank Arena Theme", txt = "(ESC to Close)", isMenuHeader = true, },
+        { icon = "fas fa-circle-xmark", header = "", txt = "Close Menu", params = { event = "" } },
 		{ header = "BASKETBALL", txt = "Change to Basketball Arena", params = { type = 'client', event = 'xmmx-mbaEntity:setEntity', args = { entity = "BASKETBALL", }, }, },
         { header = "BOXING", txt = "Change to Boxing Arena", params = { type = 'client', event = 'xmmx-mbaEntity:setEntity', args = { entity = "BOXING", }, }, }, 
         { header = "CONCERT", txt = "Change to Concert Arena", params = { type = 'client', event = 'xmmx-mbaEntity:setEntity', args = { entity = "CONCERT", }, }, },
@@ -46,5 +47,6 @@ AddEventHandler('xmmx-mbaEntity:switchToEntity', function(entity)
         for i = 1, #addEntities do ActivateInteriorEntitySet(interiorId, addEntities[i]) end
         RefreshInterior(interiorId)
         SetInteriorActive(interiorId, true)
+        TriggerEvent("xmmx-mbaEntity:OpenMenu")
     end
 end)
