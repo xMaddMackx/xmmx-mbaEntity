@@ -13,3 +13,6 @@ Dependencies:
 • qb-menu (can be edited to your menu)
 
 • qb-target (can be edited to your target)
+
+
+Code Assisted and checked using ChatGPT =)
