@@ -1,8 +1,13 @@
-exports['qb-target']:AddBoxZone('SetMBA', vec3(-281.21, -1935.45, 30.2), 0.3, 0.5, {
-	name = 'SetMBA', heading = 61.71, minZ = 30.2-0.3, maxZ = 30.2+0.3,	debugPoly = true, }, {
-	options = { { type = "client", event = "xmmx-mbaEntity:OpenMenu", icon = "fas fa-film", label = "Change Scene", --[[job = "bahama"]] }, },
-    distance = 2.0,
-})
+local Locations = {}
+
+Citizen.CreateThread(function()
+    Locations["mbaEntity"] = 
+    exports['qb-target']:AddBoxZone('mbaEntity', vec3(-281.21, -1935.45, 30.2), 0.3, 0.5, {
+        name = 'mbaEntity', heading = 61.71, minZ = 30.2-0.3, maxZ = 30.2+0.3,	debugPoly = true, }, {
+        options = { { type = "client", event = "xmmx-mbaEntity:OpenMenu", icon = "fas fa-film", label = "Change Scene", --[[job = "bahama"]] }, },
+        distance = 2.0,
+    })
+end)
 
 RegisterNetEvent("xmmx-mbaEntity:OpenMenu", function()
     exports['qb-menu']:openMenu({
@@ -49,4 +54,8 @@ AddEventHandler('xmmx-mbaEntity:switchToEntity', function(entity)
         SetInteriorActive(interiorId, true)
         TriggerEvent("xmmx-mbaEntity:OpenMenu")
     end
+end)
+
+AddEventHandler('onResourceStop', function(resource) if resource ~= GetCurrentResourceName() then return end
+	for k in pairs(Locations) do exports['qb-target']:RemoveZone(k) end
 end)
