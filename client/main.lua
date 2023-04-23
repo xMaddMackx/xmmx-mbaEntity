@@ -52,7 +52,7 @@ AddEventHandler('xmmx-mbaEntity:switchToEntity', function(entity)
         for i = 1, #addEntities do ActivateInteriorEntitySet(interiorId, addEntities[i]) end
         RefreshInterior(interiorId)
         SetInteriorActive(interiorId, true)
-        TriggerEvent("xmmx-mbaEntity:OpenMenu")
+        --TriggerEvent("xmmx-mbaEntity:OpenMenu")
     end
 end)
 
