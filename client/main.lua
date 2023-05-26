@@ -39,6 +39,7 @@ end)
 RegisterNetEvent('xmmx-mbaEntity:setEntity')
 AddEventHandler('xmmx-mbaEntity:setEntity', function(data)
 	TriggerServerEvent('xmmx-mbaEntity:switchInterior', data.entity)
+	TriggerEvent("xmmx-mbaEntity:OpenMenu")
 end)
 
 RegisterNetEvent('xmmx-mbaEntity:switchToEntity')
@@ -52,7 +53,6 @@ AddEventHandler('xmmx-mbaEntity:switchToEntity', function(entity)
         for i = 1, #addEntities do ActivateInteriorEntitySet(interiorId, addEntities[i]) end
         RefreshInterior(interiorId)
         SetInteriorActive(interiorId, true)
-        --TriggerEvent("xmmx-mbaEntity:OpenMenu")
     end
 end)
 
