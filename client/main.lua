@@ -13,7 +13,7 @@ RegisterNetEvent("xmmx-mbaEntity:OpenMenu", function()
     exports['qb-menu']:openMenu({
         { header = "Change Maze Bank Arena Theme", txt = "", isMenuHeader = true, },
         { icon = "fas fa-circle-xmark", header = "", txt = "Close Menu", params = { event = "" } },
-		{ header = "🏀 BASKETBALL", txt = "Change to Basketball Arena", params = { type = 'client', event = 'xmmx-mbaEntity:setEntity', args = { entity = "BASKETBALL", }, }, },
+	{ header = "🏀 BASKETBALL", txt = "Change to Basketball Arena", params = { type = 'client', event = 'xmmx-mbaEntity:setEntity', args = { entity = "BASKETBALL", }, }, },
         { header = "🥊 BOXING", txt = "Change to Boxing Arena", params = { type = 'client', event = 'xmmx-mbaEntity:setEntity', args = { entity = "BOXING", }, }, }, 
         { header = "🎤 CONCERT", txt = "Change to Concert Arena", params = { type = 'client', event = 'xmmx-mbaEntity:setEntity', args = { entity = "CONCERT", }, }, },
         { header = "🏎️ DERBY", txt = "Change to Derby Arena", params = { type = 'client', event = 'xmmx-mbaEntity:setEntity', args = { entity = "DERBY", }, }, },
